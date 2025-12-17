@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Memory Card Game</title>
+<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=HQIhIPci2win3i3lSfwco7cITPMZT01WFU2zZtTiVTWfAY7-k2aHMdu6Zf6Eei-OSxvI8QDUM5iowXpBqag-2sl3eC8SJJ54hHi6k_ap54WSqckV6j9ja-qF0PNfjdaUFUBtUSDzNkQan-lhKbqTfa6pEvonlN7OLZyhJUvmbxQPpkpYcUcroCz3X5hqoixtTQ_k9tY4_qIUiozXOD64JXsnTpzdjnaqj5F6ggOrDs7PpbwDf5bdASiFEAoAT5Xuw11rX5XbBiy2bNtjKaAU9n7SXmlgVOAlJ17TWayBpGdsOMirp4oVNq3hJSnmXMpNAGzuWG8pWHaA83Qw0E8z5O7cz8jvWbDypCUkaIm1UHAVH6ht9JGZXHqv0h1vpUy9x_2zeziTlB_cVI-OGsuLSiPm0eCvEy3_S3jmKXX7gN_7pvD1UutuGkwcUbI14wtQCl4K0ToGX6DJth9Ip3wm63G1ZR6i6j8VzBwrFJNNEKsSuXrtGCSr9LH9Rgmg-kdKzlhkVNpRj06CaUXAJPMd_uPreADoR5TCMVEx8_IkhpsEQA84rfI1cKdlR3alrt6pir4UfWMF9r7sWydLDoc5zqm54D2OCmmvyQ15YNNS2wFE0lvu4zW2H-IzXQvBVU83rLEox2VoZ7_IbGEMTOayohi6uYH7LKtzthFlMJ3WiNeSXin1fAA0eg8MBjDR2ICSlm7Uiy9ZIAARcpMVcZ6B8bl02zjkgPbyGNYhM4fvemeovPs_75W086SM6EJWWkNJcLA9G8MdJFIcjH2hYIVUnixAhGpqsW94vNX0U2OGmM-uZrkmjHdwIrA1-CveZnbUKK9JIO5tUqe6nN2BnAgsG98dCx7T94ASmeblv7VK8YRRgPOd4Ipmy5CVNhbDHJ0WY0yaoyUBH9Nx7P115GFdqH3y3OPMBO8leV-nK5Kuo5mGGH-Hhl1Mh-OMeimxvyJITUIWldIurLp1vp82I4uAWfIOVIqaq5BJDUWnAvDpNLAGDRluWvSVA7nVQYEnkKAPwtBXEYxguTIR-L3uDbZMTBrKChkvsR2oqtU5EZEq94NYykdHV38NuZMhRv5m3AifDpOK3D_i_g89JrK2NMc76TP_O6K3b1Xn9qWyK3IS5K3CGFyp7SVZcRKy1F5MPo8w0SjEIII4WCDzZyA89j9yaNr4E_i79Ojgtbe3jb_zo4llAB3JiFg2iiESYvJC91tl-NWT6xSVX_JQaNfjeY-Nlx1WxqW0hdpoEFmooqd1cz5AGI0hWAO_zefIn3F2n48VImfv5VqBc5OXb7Y18O6qHSJwVjsCWL655ex6Z27hTo3kupK9XgyPqaXt_CuzuHjBZFkgeGkwHg8A1VOjtvVp_kFja_IEoYw0lsLsS_Ii1db2BwNOUpQGbMBsqsHO96rLz7hjY2pRWZ4ng7sDqTqDuLWyMSiFyd2KzYwI-oyof8XaVAp4gBowPh2MlyF3K8N3mT6a8GvFvx-R2HuphtCaidiHZ1LTPzNxgdi3axJO6yIAo0r44Uf4uodkHUCQ6YMGg8l4Uk3z8kaBPhKW7qplQJuGRCJ7ArNK5IlcedAr4PylrBE9IXMVUc8bn-u3uvKXAQEH0xLJHBRKFMmWx-XAEHco5garBGVWbuGsDKqOdraFlD36wHzLw4VPDFgdy1mVyTpt2YOYITHRarExtxO11bgfkXDQj2wdNe-nN4GhV0sScWnuG4vFCJKIk47GDI07" nonce="9a83b772bda2bbf2cc73c74ca79bfd5c" charset="UTF-8"></script><style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #111;
+    color: #fff;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 48px;
+    text-shadow: 0 0 10px #ffae00;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-gap: 15px;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+.card {
+    width: 120px;
+    height: 120px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+/* Көк фон – алды (бастапқы бет) */
+.card-front {
+    background-color: #0077ff;
+}
+
+/* Сурет – арты (flip болғанда көрінеді) */
+.card-back {
+    transform: rotateY(180deg);
+    background: #fff;
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 22px;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    background: #ffae00;
+    color: #111;
+}
+#nextMap {
+    display: none;
+    background: linear-gradient(45deg,#ff0000,#ffae00);
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px 30px;
+    margin-top: 30px;
+}
+#nextMap:hover {
+    transform: scale(1.05);
+    box-shadow:0 0 30px #ffae00;
+}
+</style>
+</head>
+<body>
+
+<h1>Memory Card Game</h1>
+<div id="gameBoard"></div>
+<div id="status">Таңда: 0</div>
+<button onclick="restartGame()">Restart</button>
+<br>
+<button id="nextMap" onclick="goNext()">Келесі карта → Соңғы карта</button>
+
+<script>
+const images=['https://e-history.kz/storage/tmp/resize/prominent-figures/1200_0_da1105730bc261eda29da30ffb8898df.jpg','https://upload.wikimedia.org/wikipedia/kk/0/0b/%D2%9A%D0%B0%D1%80%D0%B0%D0%BA%D0%B5%D1%80%D0%B5%D0%B9_%D2%9A%D0%B0%D0%B1%D0%B0%D0%BD%D0%B1%D0%B0%D0%B9.jpg','https://e-history.kz/storage/tmp/resize/prominent-figures/1200_0_ee35c194da170b831ab927876515630c.jpg',
+'https://avatars.mds.yandex.net/i?id=bd550f9923cfaafad7367687a033e0d1ae3a3472-8411463-images-thumbs&n=13','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8pAnhGdnmcyFzVGHW3v2Rxbg1XKg6b524Nw&s','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL4jHSXX5ZcZF8eOz94sYQTQOG0bxLhhiK2w&s'
+];
+let cardsArray=[...images,...images];
+
+function shuffle(array){
+    for(let i=array.length-1;i>0;i--){
+        let j=Math.floor(Math.random()*(i+1));
+        [array[i],array[j]]=[array[j],array[i]];
+    }
+    return array;
+}
+
+let firstCard=null;
+let secondCard=null;
+let lockBoard=false;
+let matches=0;
+let clicks=0;
+
+const board=document.getElementById('gameBoard');
+const status=document.getElementById('status');
+const nextMapBtn=document.getElementById('nextMap');
+
+function createBoard(){
+    board.innerHTML='';
+    cardsArray=shuffle(cardsArray);
+    cardsArray.forEach(src=>{
+        const card=document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML=`
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back"><img src="${src}"></div>
+            </div>
+        `;
+        card.addEventListener('click',()=>flipCard(card));
+        board.appendChild(card);
+    });
+    nextMapBtn.style.display='none';
+}
+
+function flipCard(card){
+    if(lockBoard) return;
+    if(card===firstCard) return;
+
+    card.classList.add('flip');
+    clicks++;
+    status.textContent=`Таңда: ${clicks}`;
+
+    if(!firstCard){
+        firstCard=card;
+        return;
+    }
+
+    secondCard=card;
+    lockBoard=true;
+    checkMatch();
+}
+
+function checkMatch(){
+    const img1=firstCard.querySelector('.card-back img').src;
+    const img2=secondCard.querySelector('.card-back img').src;
+
+    if(img1===img2){
+        matches++;
+        resetCards();
+        if(matches===images.length){
+            status.textContent=`Сіз жеңдіңіз! Жалпы таңдалған: ${clicks}`;
+            nextMapBtn.style.display='inline-block';
+        }
+    } else {
+        setTimeout(()=>{
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+            resetCards();
+        },1000);
+    }
+}
+
+function resetCards(){[firstCard,secondCard,lockBoard]=[null,null,false];}
+function restartGame(){matches=0;clicks=0;status.textContent=`Таңда: 0`;createBoard();}
+function goNext(){window.location.href="QUMU.html";}
+
+createBoard();
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Соңғы ойын</title>
+<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=06E60BpJJ6ENWU-oUf9qOjv4JsfKu133ktY09FmBG-K1DI9D96PerJWi7G3vvnM4vSTDPjv2buXmozDsxepPejO7uQjHdhI79R2v81OQSetJ8-1w0vy2gJ0QgZLA_uRBTyOFlzrtlaEgNUDeUIAL92wx3pg57p_iByHkDWw6x7ZpvmLkbxnCiGs6qLP92MzAc-1QovJywJiM9-k7yNX8c4XpkIEM09BigHarKDc0EgLpasplOhX3rjuZDIsyxKtuGwPR32oHGbgZxeDvF-RQXG3ZNd7f9Oj5BZJGzR2d4uC6jGRRM9sj1lUzV-yLInwgXnX-hBG9F2QycXqNdy5NRuHvMNrJgzTZV12kAMRcOZw4WyHNzhw9v3HWXR_v1G7z-5OGqt6Cs-14pLwR6wYkCRVXR1zEBfevi4yXWfCurgoI-jIMMUzsMFJggZ38dXUJpMUopvwz1BmVaBKDiHBwrHCMm9B-7x5xm_ZtsJEAeOXZAGA4uObc2_SCs9C9F-87SAGrpbMIHxQ_9pZuCVaF_MgDLzPc0yR-KDwVeXmidNLXaFM_qk_G_VHGVGvsLL_pnWh7RMyUDX-Du6wqgfsmn8giYofxipIZxh0oYy7_2TZhyAS0hJT2MNoxT2UqyFsH1UXZrhyjg1ydneqIEbI6xv6ZQdBe8aHUS0J1eL3xh-f2LSRFo1Bj-hpJCMC_1cCTTo14u5cRSOdF9g2qHnl9XY4EU_YvJoM-k2olPl9yUxfWqzG7KBaMpnf9ntKXW7BBbmtEZnegXtB8DbO6ZqWcFMN2bkGul4D7NHHbNg9uNuQagzHKQb2SuNLHIyq_BnkyroFF8jGo4I7h57bQRORgHtd_JGQVsz7jm4awMXcvgWONKnNtMQVjuGSCyn56V8H_Iw7DCgoKX5SO-qRTLSCNPu7E-dLewAyk1Ou7jpyAkECZ3sFEIeQA2rnjFlbxdyrLEGvqSNeRhJhRLUWW8IWoxLLgqXZYKJNBEUg-bzKTjsfsrfQ48-py2CYjVIXnPj1azAdnoOi3cAnngxc9eqgdtC4hM-uUaeHzQkftax8QhY9h8SoSqWWHJPeih0GrZ-DwDaplHjdGVS3FKlnZ76hdU76X_4fdOM0X14R_hMRGvB-gzwEs6ClTynF_OxI0aTe1VVQwq8ITOrGhx48b0gCXjaNVu-RVcCjkSWXvYYiGofJUG_HjkqO7HlIIBtPFDvvc5Ruaiez9E2DT_Ar8EAwPonGBv8xFR4v74PoHuUAMw6p9vzjO_GdkKQAzRWFzL29xVLxPGgAWWxTus1rTxhnR__svNb2Rhl1rOEmajX-bdpSGNJz2ENhEC89FLtAoZ0hVDyHYUl8K9l1nDqtPyFiUY8kXuJOqxzdb76qN6lQydsTLakVzNMPX_hFwwTxagUHrpUF_vmJnELd366nsqpR2eHVW1ZYvkMdR2Gh5fjjc3TAo2Nst437a65IyAxb7ALXo-9zv8CKVJFM8Tx8RGY9zxkclkJ1BI3c26A7mcG6iVxl9UIC4Bpel8R-kPvUJMNiJBt0pxLpUcemKbj1c7WKbfJSPSsBz91_FRmTA2XpRJ4nyBU5iMZQ_B4wnViRFuKysKPhvI0mYg-M1CS61uGXe2bZMhQO-7iH_llCN014ClT8xmWtCm9uMZXVax8xLuoAbluI6t4t7NCV5ZnUCcD_Xr-9MwHyFRINhqzfSlVbqRp79EjqQ6Q0Vb85Gs9rWwYUf" nonce="c7e0687e8da3f09b19935c17431509e0" charset="UTF-8"></script><style>
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background: #1cb295;
+}
+
+.guesstheword {
+    height: auto;
+    border-radius: 5px;
+    background: white;
+    min-width: 20em;
+    padding: 1em;
+}
+
+.title {
+    position: relative;
+    margin-bottom: 1em;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.title::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: grey;
+    bottom: 0;
+    left: 0;
+}
+
+.container {
+    padding: 1em 0;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8em;
+    margin-bottom: 1em;
+}
+
+.letter {
+    height: 2em;
+    width: 1.5em;
+    outline: none;
+    text-align: center;
+    font-size: 1.4em;
+    text-transform: uppercase;
+}
+
+.indicators {
+    font-size: 0.9em;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+button {
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    width: 16em;
+    height: 3em;
+    outline: none;
+}
+
+.submit {
+    background: #1cb295;
+}
+
+.reset {
+    background: red;
+}
+
+#goFinal {
+    background: #ffae00;
+    display: none; /* бастап көрінбейді */
+}
+
+#customWordContainer {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+#customWordInput {
+    padding: 5px;
+    font-size: 1em;
+}
+</style>
+</head>
+<body>
+<div class="guesstheword">
+
+    <header class="title">
+        <h1>Севан Рабданға қарсы соңғы ойын</h1> 
+        <p>(жанында отырған адам саған сөз жұмбақ құрсын!)</p>
+        <p>(let the guy near you make a word, and you'll guess it!)</p>
+    </header>
+
+    <!-- Custom word input -->
+    <div id="customWordContainer">
+        <input type="text" id="customWordInput" placeholder="Write your word here">
+        <button id="startGameBtn" class="submit">Start Game</button>
+    </div>
+
+    <form class="container">
+        <div class="inputs"></div>
+        <div class="indicators">
+            <p class="remaining">
+                Remaining guesses: <span class="rem-val">5</span>
+            </p>
+            <p class="wrong">
+                Wrong letters: <span class="wr-val"></span>
+            </p>
+        </div>
+        <div class="actions">
+            <button class="submit" type="button" id="submitGuessBtn">Submit Guess</button>
+            <button class="reset" type="button" id="resetBtn">Reset Game</button>
+        </div>
+    </form>
+
+</div>
+
+<!-- FINAL BUTTON -->
+<button type="button" id="goFinal" style="display:none; background:#ffae00; margin-top:10px; width:16em; height:3em; border:none; border-radius:5px; cursor:pointer;">
+    Go to Final Map
+</button>
+
+<script>
+// Батырманы басқанда соңғы картаға өту
+const goFinalBtn = document.getElementById('goFinal');
+goFinalBtn.addEventListener('click', () => {
+    window.location.href = 'final_map.html'; // мұны өз файлыңа өзгерте аласың
+});
+
+// Ойын соңында батырманы көрсету мысалы:
+// Жеңгенде немесе ойын біткенде:
+function showFinalButton() {
+    goFinalBtn.style.display = 'block';
+}
+
+// Мысалы:
+if(gameWon || gameOver) { // өз логикаңа қарай gameWon/gameOver шартын қой
+    showFinalButton();
+}
+</script>
+
+<script>
+let secretWord = '';
+let remainingGuesses = 5;
+let wrongLetters = [];
+let currentGuess = [];
+const inputsContainer = document.querySelector('.inputs');
+const remVal = document.querySelector('.rem-val');
+const wrVal = document.querySelector('.wr-val');
+
+const customWordInput = document.getElementById('customWordInput');
+const startGameBtn = document.getElementById('startGameBtn');
+const submitGuessBtn = document.getElementById('submitGuessBtn');
+const resetBtn = document.getElementById('resetBtn');
+
+function setupInputs() {
+    inputsContainer.innerHTML = '';
+    currentGuess = Array(secretWord.length).fill('');
+    for(let i=0; i<secretWord.length; i++){
+        const input = document.createElement('input');
+        input.classList.add('letter');
+        input.setAttribute('maxlength','1');
+        input.addEventListener('input', (e)=>{
+            currentGuess[i] = e.target.value.toUpperCase();
+        });
+        inputsContainer.appendChild(input);
+    }
+    remVal.textContent = remainingGuesses;
+    wrVal.textContent = wrongLetters.join(', ');
+}
+
+// Start game with custom word
+startGameBtn.addEventListener('click', ()=>{
+    const word = customWordInput.value.trim();
+    if(word.length<1) return alert('Write a word!');
+    secretWord = word.toUpperCase();
+    remainingGuesses = 5;
+    wrongLetters = [];
+    document.getElementById('customWordContainer').style.display = 'none';
+    setupInputs();
+    goFinalBtn.style.display = 'none';
+});
+
+// Submit guess
+submitGuessBtn.addEventListener('click', ()=>{
+    const guessWord = currentGuess.join('');
+    if(guessWord.length !== secretWord.length) return alert('Барлық әріптерді толтыр!');
+    if(guessWord === secretWord){
+        alert('🎉 Дұрыс! 🎉');
+        goFinalBtn.style.display='block'; // жеңгенде батырма шығады
+        return;
+    } else {
+        remainingGuesses--;
+        remVal.textContent = remainingGuesses;
+        // Add wrong letters
+        guessWord.split('').forEach((l, i)=>{
+            if(l !== secretWord[i] && !wrongLetters.includes(l)){
+                wrongLetters.push(l);
+            }
+        });
+        wrVal.textContent = wrongLetters.join(', ');
+    }
+    if(remainingGuesses<=0){
+        alert('Game over! The word was: ' + secretWord);
+        goFinalBtn.style.display='block';
+    }
+});
+
+// Reset game
+resetBtn.addEventListener('click', ()=>{
+    secretWord = '';
+    remainingGuesses = 5;
+    wrongLetters = [];
+    currentGuess = [];
+    inputsContainer.innerHTML = '';
+    wrVal.textContent = '';
+    remVal.textContent = remainingGuesses;
+    document.getElementById('customWordContainer').style.display = 'flex';
+    customWordInput.value = '';
+});
+goFinalBtn.addEventListener('click', ()=>{
+    window.location.href = 'final.html';
+});
+</script>
+
+</body>
+</html>

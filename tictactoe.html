@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>АҚСУДЫ ЖАУЛАП АЛУ</title>
+
+<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=OIXNedejzWiV_igOneSzsd4Npaq9mVjJMRbbmdB21MWNhHIDBsmmFbR9UPVYAtRGSYEs1IUNziN4JqHvgXLgc7LApSY3O3mlThLnZkmPyi5Qy8fNAbZZqT9xB080my7PDIaVJZ1eCKpg9zktMqxvyzWhzAmfXrcYHN0q4AI0FzpJbkIc9IzC11DqRe8DJYM6-en82xvnjgIYsWMnQSJDTo_M13fd_9ks1OpCrxBOtOBfpvTz4G0WnLUaMK3IlxESwQb_6RV3O1ywbHdwdefXW6TUm6aUMTdPIIInneFRmzQ3o_r3uaHcw1me92tBkjU29EHO3x6PcmFq2Xql7RskegyLY6PbczS-23RMAd_QGaxwU605PTshjliIzWg6o6VLm7GBQldhwCwD53SDhRNyHZCGrYkMpDMv-T1UhBxens3Z2iONdmo0qCNxhfhjVkJGzBoUjwfUT7jSv9Hbbw3lNsP9pave9wGmnO_Il8nyiWsCESbe5MzovZsZXDhXms8Mbtx6ijnC8oLT7smRDfjXr-gcvXrWL8WzRQCXN-1IbBAzkPn76TliR5JxTlMjoWdziUi4W1yQuErkluddqkIShl9l1pJxYb_HbBDT2pEbmbsYC_-If2K3vGHDJA6lWl1_nB9shgwV6WWQjrA1iOAUW3GGZZx9J3OOYnKiTBZAppmsCfnsnhmgAqWUo8ITFhvXPgQjUzGG4ucd8fAg7hHsTyrjN8isURr0xMO_zYeNaTukNI3GopIC3_ueyWP4I0wG6ObXZKzwA871ltkePf0pq52EkGTl7pV9UtmBlB27gyUKfsB2sTyCQ2tjOwRZti2BR_k1N7HC_3Kj2x-c0fhK-lGUytr73iusaR1Ep3k6E4wrc8uZMyqChvYab-XwCzUM-E-0Se6yZTatp5-WcA7Rg7jY9Rs1AsyZLEoH4HgJqnwB9z5OJxCQDK4LhgpA0HbEl2dUk5QLda4lGV-RT3qI4v9OH4QtvNhaNFZza3mw3KpVyeN4enJJqSe1ubx2a2qNHO0Y8pVztP3xjzNNfXHZ8vD7xZ_x3HpvDdXEhju0EJneCNCXttoiBS2RU1ZZd9egiBi5E-l1wS9tDBjD_10W5YNtyOZaTYTE0bI5hF-jndNwa8FIUvwB8stRFvwxVvUmvGEJGpKKieekMi5cLK1xfVmMg9TJIyG1nLdDnUJ5I3_G7d69hxBy_pJdHhDhHhbPSow_jgQSPqdxi825D8gWORW-1g4WeAVkoBQ86GL-wImQ6fkBgncLxzsPWiCILMrysR2F_6awQGBjmyLF7Fk1TM9mEbQYbKxcGLrPH6ol5M5XmlfeJcqvIrG19ZOTqB4J5__Kibnh451SXEJkp1Inmr2iEVgxO9aVigKKO6oibfM7Ckds98_C2qBFLZqKz3eHrPafF-9NdHTanU7yQu_IQUSkfp92w7lw-sbFLezpicYV-tgHew8vdLbR0a_eRrQGNIMV3qu7WvYm2pt682XfSG0HR4zpu_a-Nd3P8BHz9-dH2IBrqBLHUJg9deI9PYvWYV_xMoZqIWayCOzY_o0LWSjkWGLV5zN2_xGlRSXTqvo2VoYFU_LFco5GuPyXhZGX5kcfVxg2YLSDbr4_nPfuqiI6GA0wpUoX4ac_miQ5hXghXewYdk9ZftLIKhki4Z6n0cJmxVOEIsWaFX1yCTm6Ls0cgOpU7IjnGkmkv13SUi9mtfQmQsFuximP3JkZrQUc" nonce="98b4dc351178e1244221d64e38679d66" charset="UTF-8"></script><style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#status {
+    font-size: 20px;
+    margin: 10px;
+}
+
+#board {
+    width: 300px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    border: 2px solid black;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#nextMap {
+    background: #444;
+    color: white;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+#nextMap.active {
+    opacity: 1;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>АҚСУДЫ ЖАУЛАП АЛУ</h1>
+<p id="status">Your turn (X)</p>
+
+<div id="board">
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+</div>
+
+<button onclick="restart()">Restart</button>
+<br>
+<button id="nextMap" onclick="goNext()" disabled>
+    КЕЛЕСІ КАРТА → URUMQI
+</button>
+
+<script>
+const cells = document.querySelectorAll(".cell")
+const statusText = document.getElementById("status")
+const nextMapBtn = document.getElementById("nextMap")
+
+const HUMAN = "X"
+const CPU = "O"
+let gameOver = false
+
+const winCombos = [
+    [0,1,2],[3,4,5],[6,7,8],
+    [0,3,6],[1,4,7],[2,5,8],
+    [0,4,8],[2,4,6]
+]
+
+// Player move
+cells.forEach((cell) => {
+    cell.addEventListener("click", () => {
+        if (cell.textContent !== "" || gameOver) return
+
+        cell.textContent = HUMAN
+
+        if (checkWin(HUMAN)) {
+            statusText.textContent = "Victory! Aksu conquered!"
+            gameOver = true
+            unlockNextMap()
+            return
+        }
+
+        if (isTie()) {
+            statusText.textContent = "Stalemate!"
+            gameOver = true
+            return
+        }
+
+        cpuMove()
+    })
+})
+
+// CPU move
+function cpuMove() {
+    let empty = []
+    cells.forEach((cell, i) => {
+        if (cell.textContent === "") empty.push(i)
+    })
+
+    let move = empty[Math.floor(Math.random() * empty.length)]
+    cells[move].textContent = CPU
+
+    if (checkWin(CPU)) {
+        statusText.textContent = "Defeat! Dzhungars win!"
+        gameOver = true
+        return
+    }
+
+    if (isTie()) {
+        statusText.textContent = "Stalemate!"
+        gameOver = true
+        return
+    }
+
+    statusText.textContent = "Your turn (X)"
+}
+
+// Win check
+function checkWin(player) {
+    return winCombos.some(combo =>
+        combo.every(i => cells[i].textContent === player)
+    )
+}
+
+// Tie check
+function isTie() {
+    return [...cells].every(cell => cell.textContent !== "")
+}
+
+// Restart
+function restart() {
+    cells.forEach(cell => cell.textContent = "")
+    statusText.textContent = "Your turn (X)"
+    gameOver = false
+    lockNextMap()
+}
+
+// Unlock next map
+function unlockNextMap() {
+    nextMapBtn.disabled = false
+    nextMapBtn.classList.add("active")
+}
+
+// Lock next map
+function lockNextMap() {
+    nextMapBtn.disabled = true
+    nextMapBtn.classList.remove("active")
+}
+
+// Go to Urumqi
+function goNext() {
+    if (!nextMapBtn.disabled) {
+        window.location.href = "Urumqi.html"
+    }
+}
+</script>
+
+</body>
+</html>
